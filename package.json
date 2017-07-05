@@ -19,6 +19,8 @@
   "homepage": "https://github.com/3dw1nM0535/node-js-playlist#readme",
   "dependencies": {
     "fs": "0.0.1-security",
-    "http": "0.0.0"
+    "http": "0.0.0",
+    "util": "^0.10.3",
+    "utils": "^0.3.1"
   }
 }
