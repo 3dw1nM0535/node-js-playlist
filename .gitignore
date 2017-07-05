@@ -47,4 +47,5 @@ Temporary Items
 .apdisk
 .vscode
 /node_modules
+package.json
 
