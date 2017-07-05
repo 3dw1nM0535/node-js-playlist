@@ -21,7 +21,7 @@ var server = http.createServer((req, res) => {
     res.end(JSON.stringify(user));
   } else {
     res.writeHead(404, {'Content-Type': 'text/html' });
-    fs.createReadStream(__dirname + '/404.html');
+    fs.createReadStream(__dirname + '/404.html').pipe(res);
   }
 });
 
