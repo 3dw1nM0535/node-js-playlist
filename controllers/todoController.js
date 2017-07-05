@@ -25,20 +25,28 @@ var urlencodedbodyParser = bodyParser.urlencoded({extended: false });
 
 module.exports = (app) => {
 
+  //Get data and pass it to the view
   app.get('/todo', (req, res) => {
-    res.render('todo', {todos: data });
+    Todo.find({}, (err, data) => {
+      if(err) throw err;
+      res.render('todo', {todos: data });
+    })
   });
 
+  //Post data to the database and save it
   app.post('/todo', urlencodedbodyParser, (req, res) => {
-    data.push(req.body);
-    res.json(data);
+    var newTodo = Todo(req.body).save((err, data) =>  {
+      if(err) throw err;
+      res.json(data);
+    })
   });
 
+  //Delete data from the db and update the view
   app.delete('/todo/:item', (res, req) => {
-    data = data.filter((todo) => {
-      return todo.item.replace(/ /g, '-') !== req.params.item;
+    Todo.find({item: req.params.item.replace(/\-/g, ' ')}).remove((err, data) => {
+      if(err) throw err;
+      res.json(data);
     });
-    res.json(data);
   });
 
 };
