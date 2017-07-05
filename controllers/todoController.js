@@ -11,18 +11,15 @@ var todoSchema = new mongoose.Schema({
 //Model
 var Todo =mongoose.model('Todo', todoSchema);
 
-var itemOne = Todo({item: 'get flowers' }).save((err) => {
-  if(err) throw err;
-  console.log('Item saved!');
-})
-
 var bodyParser = require('body-parser');
 
+/*
 var data = [
   {item: 'get milk'},
   {item: 'walk dog'},
   {item: 'kick some coding ass'}
 ];
+*/
 
 var urlencodedbodyParser = bodyParser.urlencoded({extended: false });
 
