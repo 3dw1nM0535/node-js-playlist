@@ -1,5 +1,21 @@
 var mongoose = require('mongoose');
 
+//Connect to database
+mongoose.connect('mongodb://test:test@ds151062.mlab.com:51062/todo');
+
+//Create a schema - like a blueprint to our db
+var todoSchema = new mongoose.Schema({
+  item: String
+});
+
+//Model
+var Todo =mongoose.model('Todo', todoSchema);
+
+var itemOne = Todo({item: 'get flowers' }).save((err) => {
+  if(err) throw err;
+  console.log('Item saved!');
+})
+
 var bodyParser = require('body-parser');
 
 var data = [
