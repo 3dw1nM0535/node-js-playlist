@@ -15,7 +15,7 @@ app.get('/contact', (req, res) => {
 });
 
 app.get('/profile/:name', (req, res) => {
-  res.send(`You requested to see profile of ${req.params.name}`);
+  res.render('profile');
 })
 
 app.listen(port);
