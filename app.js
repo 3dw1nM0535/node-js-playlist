@@ -18,8 +18,11 @@ app.get('/home', (req, res) => {
 });
 
 app.get('/contact', (req, res) => {
-  console.log(req.query);
   res.render('contact');
+});
+
+app.post('/contact', urlencodedParser, (req, res) => {
+  console.log(req.body);
 });
 
 app.get('/profile/:name', (req, res) => {
