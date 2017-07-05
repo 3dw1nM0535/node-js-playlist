@@ -1,5 +1,6 @@
 var http = require('http');
 
+/*
 var port = 3000;
 
 var server = http.createServer((req, res) => {
@@ -10,3 +11,4 @@ var server = http.createServer((req, res) => {
 
 server.listen(port, '127.0.0.1');
 console.log(`Server listening on port ${port}`);
+*/
