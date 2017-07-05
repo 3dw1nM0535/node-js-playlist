@@ -6,7 +6,7 @@ var app = express();
 var port = 3000;
 
 //set templating engine
-app.set('view eingine', 'ejs');
+app.set('view engine', 'ejs');
 
 //static files handler
 app.use(express.static('/public'));
