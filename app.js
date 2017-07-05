@@ -9,7 +9,7 @@ var port = 3000;
 app.set('view engine', 'ejs');
 
 //static files handler
-app.use(express.static('/public'));
+app.use(express.static('./public'));
 
 //todoController model
 todoController(app);
