@@ -5,8 +5,8 @@ var port = 3000;
 
 var server = http.createServer((req, res) => {
   console.log(`Request received from browser ${req.url}`);
-  res.writeHead(200, {'Content-Type': 'text/plain' });
-  var myStream = fs.createReadStream(__dirname + '/readAble.txt', 'utf8');
+  res.writeHead(200, {'Content-Type': 'text/html' });
+  var myStream = fs.createReadStream(__dirname + '/index.html', 'utf8');
   myStream.pipe(res);
 
 });
