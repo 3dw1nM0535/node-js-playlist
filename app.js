@@ -5,11 +5,11 @@ var port = 3000;
 var app = express();
 
 app.get('/', (req, res) => {
-  res.send('This is the homepage!');
+  res.sendFile(__dirname + '/index.html');
 });
 
 app.get('/contact', (req, res) => {
-  res.send('This is the contact page!');
+  res.sendFile(__dirname + '/contact.html');
 });
 
 app.get('/profile/:name', (req, res) => {
