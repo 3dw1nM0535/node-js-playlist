@@ -15,6 +15,7 @@ app.get('/home', (req, res) => {
 });
 
 app.get('/contact', (req, res) => {
+  console.log(req.query);
   res.render('contact');
 });
 
