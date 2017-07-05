@@ -1,4 +1,13 @@
 var http = require('http');
+var fs = require('fs');
+
+var myStream = fs.createReadStream(__dirname + '/readAble.txt', 'utf8');
+var writeStream = fs.createWriteStream(__dirname + '/witeMe.txt');
+
+myStream.on('data', (chunk) => {
+  console.log('New chunk received...');
+  writeStream.write(chunk);
+});
 
 /*
 var port = 3000;
