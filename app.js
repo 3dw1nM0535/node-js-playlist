@@ -23,6 +23,7 @@ app.get('/contact', (req, res) => {
 
 app.post('/contact', urlencodedParser, (req, res) => {
   console.log(req.body);
+  res.render('contact-us', {data: res.body });
 });
 
 app.get('/profile/:name', (req, res) => {
